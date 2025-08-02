@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: url('img/DSC_6619.JPG') no-repeat center center fixed;
+      background: url('img/DSC_6625.JPG') no-repeat center center fixed;
       background-size: cover;
       color: white;
       min-height: 100vh;
@@ -16,6 +16,7 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
+      transition: background-image 1s ease-in-out;
     }
 
     .container {
@@ -29,6 +30,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      background-color: white;
+      padding: 6px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
     }
 
     h1 {
@@ -77,6 +90,7 @@
 <body>
 
   <div class="container">
+    <img src="img/Logo Hima.png" alt="Logo HIMAKSY" class="logo">
     <h1>Himpunan Mahasiswa Akuntansi Syariah</h1>
 
     <div class="link-container">
@@ -119,5 +133,18 @@
     </footer>
   </div>
 
+  <script>
+    const images = [
+      'img/DSC_6625.JPG',
+      'img/DSC_6612.JPG',
+      'img/DSC_6562.JPG'
+    ];
+
+    let current = 0;
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      document.body.style.backgroundImage = `url('${images[current]}')`;
+    }, 5000);
+  </script>
 </body>
 </html>
