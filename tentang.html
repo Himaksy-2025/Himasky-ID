@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HIMAKSY - Kontak & Sosial Media</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('img/DSC_6625.JPG') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      transition: background-image 1s ease-in-out;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 16px;
+      padding: 30px 20px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 80px;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid white;
+      background-color: white;
+      padding: 6px;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 5px #000;
+      text-align: center;
+      font-size: clamp(20px, 5vw, 28px);
+    }
+
+    .link-container {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      padding: 12px 20px;
+      margin: 10px 0;
+      width: 100%;
+      transition: background-color 0.3s ease;
+      text-align: left;
+    }
+
+    .link-container:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .link-container a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+    }
+
+    .link-container img {
+      width: 28px;
+      height: 28px;
+      margin-right: 12px;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #ccc;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header disisipkan -->
+  <div id="header-placeholder"></div>
+
+  <!-- Sisipkan header menggunakan JavaScript -->
+  <script>
+    // Ganti background secara otomatis
+    const images = [
+      'img/DSC_6625.JPG',
+      'img/DSC_6612.JPG',
+      'img/DSC_6562.JPG'
+    ];
+    let current = 0;
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      document.body.style.backgroundImage = `url('${images[current]}')`;
+    }, 5000);
+
+    // Load header.html ke dalam index.html
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
+      
+      function toggleMenu() {
+    const nav = document.getElementById("nav-menu");
+    nav.classList.toggle("show");
+  }
+  </script>
+</body>
+</html>
