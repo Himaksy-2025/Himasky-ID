@@ -1,21 +1,40 @@
-<!-- header.html -->
 <header>
-  <img src="img/Logo Hima.png" alt="Logo HIMAKSY" class="header-logo" />
-  <span class="header-title">HIMAKSY</span>
+  <div class="header-left">
+    <img src="img/Logo Hima.png" alt="Logo HIMAKSY" class="header-logo" />
+    <span class="header-title">HIMAKSY</span>
+  </div>
+
+  <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
+  <nav class="header-nav" id="nav-menu">
+    <a href="#home">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#sosmed">Media Sosial</a>
+  </nav>
 </header>
 
 <style>
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0.5);
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-image: url('img/Background-header.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+}
+
+
+  .header-left {
     display: flex;
     align-items: center;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .header-logo {
@@ -33,4 +52,64 @@
     color: white;
     text-shadow: 1px 1px 3px black;
   }
+
+  .header-nav {
+    display: flex;
+    gap: 15px;
+  }
+
+  .header-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+
+  .header-nav a:hover {
+    color: #ffd700;
+  }
+
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+  }
+
+  /* ===== RESPONSIVE & ANIMATED DROPDOWN ===== */
+  @media (max-width: 600px) {
+    .header-nav {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.9);
+      flex-direction: column;
+      padding: 0 10px;
+      border-radius: 8px;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s ease-in-out, padding 0.3s ease-in-out;
+    }
+
+    .header-nav.show {
+      max-height: 300px;
+      padding: 10px;
+    }
+
+    .header-nav a {
+      padding: 8px 0;
+      font-size: 16px;
+    }
+
+    .hamburger {
+      display: block;
+    }
+  }
 </style>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("nav-menu");
+    nav.classList.toggle("show");
+  }
+</script>

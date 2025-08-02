@@ -157,6 +157,11 @@
       .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
       });
+      
+      function toggleMenu() {
+    const nav = document.getElementById("nav-menu");
+    nav.classList.toggle("show");
+  }
   </script>
 </body>
 </html>
