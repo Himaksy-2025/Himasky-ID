@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>HIMAKSY - Kontak & Sosial Media</title>
   <style>
     body {
@@ -30,6 +30,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 80px;
     }
 
     .logo {
@@ -89,41 +90,44 @@
 </head>
 <body>
 
+  <!-- Header disisipkan -->
+  <div id="header-placeholder"></div>
+
   <div class="container">
-    <img src="img/Logo Hima.png" alt="Logo HIMAKSY" class="logo">
+    <img src="img/Logo Hima.png" alt="Logo HIMAKSY" class="logo" />
     <h1>Himpunan Mahasiswa Akuntansi Syariah</h1>
 
     <div class="link-container">
       <a href="https://instagram.com/himaksy_" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
         @himaksy_
       </a>
     </div>
 
     <div class="link-container">
       <a href="https://www.facebook.com/profile.php?id=100073326957031&mibextid=ZbWKwL" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
         HIMAKSY OFFICIAL
       </a>
     </div>
 
     <div class="link-container">
       <a href="mailto:himaksy.febi@gmail.com">
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" />
         himaksy.febi@gmail.com
       </a>
     </div>
 
     <div class="link-container">
       <a href="https://www.youtube.com/channel/UClCk5ote8xLVKyc1-J6nfbw" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" />
         Himaksy Official
       </a>
     </div>
 
     <div class="link-container">
       <a href="https://www.tiktok.com/@himaksy?_t=ZS-8ySHnYuJbs5&_r=1" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok">
+        <img src="https://cdn-icons-png.flaticon.com/512/3046/3046122.png" alt="TikTok" />
         HimaksyOfficial
       </a>
     </div>
@@ -133,18 +137,26 @@
     </footer>
   </div>
 
+  <!-- Sisipkan header menggunakan JavaScript -->
   <script>
+    // Ganti background secara otomatis
     const images = [
       'img/DSC_6625.JPG',
       'img/DSC_6612.JPG',
       'img/DSC_6562.JPG'
     ];
-
     let current = 0;
     setInterval(() => {
       current = (current + 1) % images.length;
       document.body.style.backgroundImage = `url('${images[current]}')`;
     }, 5000);
+
+    // Load header.html ke dalam index.html
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      });
   </script>
 </body>
 </html>
